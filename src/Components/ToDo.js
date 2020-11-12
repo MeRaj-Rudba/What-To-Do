@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ToDo = ({ toDo, text, toDos, setToDos, }) => {
+const ToDo = ({ toDo, text, toDos, setToDos, category }) => {
     //EVENTS
     const deleteHandler = () => {
 
@@ -20,7 +20,8 @@ const ToDo = ({ toDo, text, toDos, setToDos, }) => {
 
     return (
         <div className="todo">
-            <li className={`todo-item ${toDo.completed ? "completed": ""}`}>{text}</li>
+            <li className={`todo-item ${toDo.completed ? "completed" : ""}`}> Task: <span className='todo-inside-text'>{text}</span></li>
+            <li className={`todo-item todo-item2 ${toDo.completed ? "completed" : ""}`}> Category: <span className='todo-inside-text'>{category}</span></li>
             <button onClick={completeHandler} className='complete-btn'><i className='fas fa-check'></i></button>
             <button onClick={deleteHandler} className='trash-btn'><i className='fas fa-trash'></i></button>
         </div>

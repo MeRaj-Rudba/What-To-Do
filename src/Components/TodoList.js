@@ -13,7 +13,8 @@ const TodoList = ({ toDos, setToDos, filteredTodos }) => {
                             setToDos={setToDos}
                             key={toDo.id}
                             toDo={toDo}
-                            text={toDo.text} />
+                            text={toDo.text} 
+                            category={toDo.category} />
                     ))
                 }
 

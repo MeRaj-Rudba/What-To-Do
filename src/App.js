@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import Footer from './Components/Footer';
 import Form from './Components/Form';
 import TodoList from './Components/TodoList';
 
@@ -7,6 +8,8 @@ function App() {
 
   //states
   const [inputText, setInputText] = useState("");
+  const [inputCategory, setInputCategory] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
   const [toDos, setToDos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
@@ -55,12 +58,21 @@ function App() {
 
   return (
     <div className="App">
-      <header>What to do!</header>
+      <header classname='head-line'>What to do!</header>
       <Form
-        inputText={inputText}
+
         toDos={toDos}
         setToDos={setToDos}
+
+        inputCategory={inputCategory}
+        setInputCategory={setInputCategory}
+
+        errorMsg={errorMsg}
+        setErrorMsg={setErrorMsg}
+
+        inputText={inputText}
         setInputText={setInputText}
+
         setStatus={setStatus}
       />
       <TodoList
@@ -68,6 +80,8 @@ function App() {
         toDos={toDos}
         setToDos={setToDos}
       />
+
+      <Footer/>
     </div>
   );
 }
